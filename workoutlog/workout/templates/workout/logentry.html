@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ detail.workoutdate }} : {{ detail.workouttime }}</h2>
+<p><b>Location:</b>  {{ detail.workoutlocation  }}</p>
+<p><b>Exercises:</b></p>
+{% for item in detail.exercises.all %}
+    <p>{{ item }}</p>
+{% endfor %}
+
+{% endblock %}

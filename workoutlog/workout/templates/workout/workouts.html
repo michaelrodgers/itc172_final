@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Workouts</h2>
+<table class='table'>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+    </tr>
+    {% for item in workout_list %}
+        <tr>
+            <td><a href="{% url 'workoutdetail' id=item.id %}">{{ item.workoutdate }}</a></td>
+            <td><a href="{% url 'workoutdetail' id=item.id %}">{{ item.workouttime }}</a></td>
+            <td><a href="{% url 'workoutdetail' id=item.id %}">{{ item.workoutlocation  }}</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
